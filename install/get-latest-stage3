@@ -1,0 +1,13 @@
+#!/bin/sh
+# Get the latest gentoo stage3 tarball
+
+arch=$1;
+[[ -z $arch ]] && exit 1
+printf "Arch is $arch\n";
+printf "Finding latest tarball ..\n";
+latest=$(curl -sL "http://distfiles.gentoo.org/releases/$arch/autobuilds/latest-stage3-$arch.txt" | tail -n1 | awk '{ print $1 }');
+printf "Downloading $(printf $latest | sed 's/.*\///' ) .. \n";
+curl -LO -C - "http://distfiles.gentoo.org/releases/$arch/autobuilds/{$latest}";
+
+# printf "Extracting stage3 to gentoo.$arch ..\n";
+# tar xf stage3-$arch-*.tar.xz -C gentoo.$arch;
