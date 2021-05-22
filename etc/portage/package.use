@@ -1,0 +1,60 @@
+app-arch/libarchive lz4 lzo -e2fsprogs
+app-emulation/qemu io-uring udev xfs QEMU_SOFTMMU_TARGETS: -* i386 x86_64 QEMU_USER_TARGETS: -* x86_64
+app-misc/neofetch -X
+
+dev-lang/python -bluetooth
+dev-libs/libffi abi_x86_32
+dev-libs/libpcre2 pcre32 pcre16
+dev-libs/libxml2 abi_x86_32
+dev-lua/lgi LUA_TARGETS: luajit
+dev-vcs/git -perl
+
+media-gfx/fbida -* fbcon png
+media-gfx/imagemagick jpeg svg xml -truetype
+# xa xvmc not available for my graphics card
+media-libs/mesa gallium llvm
+media-sound/cava -pulseaudio
+media-video/ffmpeg libass libdrm lzma mp3 x264 x265
+media-video/mpv cli drm libmpv
+net-libs/libpcap netlink
+net-misc/aria2 bittorrent
+net-misc/iperf sctp
+net-misc/networkmanager -* dhcpcd elogind gnutls iwd ncurses resolvconf wifi
+net-misc/openssh X509
+net-misc/rsync lz4 system-zlib xxhash
+net-misc/tigervnc dri3 drm
+
+# pam is required by xorg-server
+sys-auth/elogind pam
+sys-apps/dbus X
+sys-apps/less -lesspipe -less-select
+sys-apps/shadow pam
+sys-boot/grub -grub_platforms_* grub_platforms_pc mount
+sys-devel/binutils -default-gold gold
+sys-devel/clang default-compiler-rt default-libcxx default-lld -llvm_targets_*
+sys-devel/distcc -gtk
+sys-devel/gcc graphite pgo
+sys-devel/llvm -llvm_targets_* abi_x86_32 exegesis gold
+sys-firmware/intel-microcode initramfs hostonly
+sys-libs/libseccomp static-libs
+sys-libs/libunwind lzma
+sys-libs/ncurses abi_x86_32
+sys-libs/zlib abi_x86_32
+
+x11-base/xorg-server -suid
+x11-drivers/xf86-video-intel dri exa
+x11-libs/libdrm libkms
+x11-libs/libva utils
+x11-misc/dunst dunstify
+x11-terms/rxvt-unicode 256-color xft
+x11-terms/st savedconfig
+#x11-wm/awesome LUA_SINGLE_TARGET: -* luajit
+
+# required by net-misc/gns3-gui-2.2.19::gentoo
+# required by gns3-gui (argument)
+>=dev-python/PyQt5-5.15.2 gui widgets websockets svg network
+# required by media-gfx/fbida-2.14-r2::gentoo[fbcon]
+# required by fbida (argument)
+>=app-text/poppler-21.04.0 cairo
+
+# --------------------------------------------------------------------------------------------------------------- #
