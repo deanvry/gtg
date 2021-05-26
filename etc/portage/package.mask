@@ -1,8 +1,6 @@
 ## hold kernel updates
->sys-kernel/gentoo-sources-5.12.2
->sys-kernel/gentoo-kernel-bin-5.11.20
-sys-kernel/gentoo-kernel
-sys-kernel/vanilla-kernel
+>sys-kernel/gentoo-sources-5.12.7
+>sys-kernel/gentoo-kernel-bin-5.12.6
 
 # hold app update
 >app-emulation/qemu-6.0.0
@@ -12,14 +10,6 @@ sys-kernel/vanilla-kernel
 dev-lang/python:3.9
 dev-lang/python:3.10
 
-## avoid system upgrade conflicts
-
-# dev-python/sphinx-4.0.1-r1 with bdeps: =dev-python/docutils-0.16-r1
->dev-python/docutils-0.16-r1
-
-# not anymore
-# dev-python/lxml-4.6.3 with bdeps: =dev-libs/lxml2-2.9.10-r5
-#>dev-libs/libxml2-2.9.10-r5
-
-# dev-python/jsonschema-3.2.0 conflicts with dev-python/requests-2.25.1-r2
->dev-python/idna-2.10.0-r1
+# dont use other kernels
+sys-kernel/gentoo-kernel
+sys-kernel/vanilla-kernel
